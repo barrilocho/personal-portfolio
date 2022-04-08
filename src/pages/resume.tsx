@@ -10,7 +10,7 @@ import {
 const ResumePage = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row  justify-center space-x-4 w-full">
+      <div className="flex flex-col md:flex-row items-center justify-center space-x-4 w-full">
         <div className="m-2 p-6 pt-16 bg-white flex flex-col justify-center  shadow-md w-full max-w-sm rounded-md">
           <div className="flex justify-center self-center rounded-full border-2 border-solid border-gray-300">
             <Image
@@ -108,22 +108,51 @@ const ResumePage = () => {
             </div>
           ))}
         </div>
-        <div className="m-2 p-6 pt-16 bg-white flex flex-col justify-center shadow-md w-full rounded-md border-2 border-black border-solid">
-          <div className="">
-            <h3 className="font-medium my-2 py-2 border-b-2 border-gray-200 border-dashed">
-              LENGUAGES
-            </h3>
-          </div>
-          <div></div>
-          <div className="flex w-fit py-2 px-4 rounded-3xl bg-blue-50">
-            <Image
-              src="/profile_picture.jpeg"
-              alt="logo js"
-              width={25}
-              height={25}
-              className="rounded-full"
-            />
-            <h5 className="pl-2">Javascript</h5>
+        <div className="bg-white m-2 p-4 flex flex-col self-start justify-center shadow-md w-full rounded-md border-2 border-black border-solid">
+          <h3 className="font-medium pb-2 mb-2 border-b-2 border-gray-200 border-dashed">
+            LENGUAGES
+          </h3>
+          <div className="flex flex-wrap">
+            <div className="flex w-fit mr-2 mt-2 py-2 px-4 rounded-3xl bg-blue-50">
+              <Image
+                src="/profile_picture.jpeg"
+                alt="logo js"
+                width={25}
+                height={25}
+                className="rounded-full"
+              />
+              <h5 className="pl-2">Javascript</h5>
+            </div>
+            <div className="flex w-fit mr-2 mt-2 py-2 px-4 rounded-3xl bg-blue-50">
+              <Image
+                src="/profile_picture.jpeg"
+                alt="logo js"
+                width={25}
+                height={25}
+                className="rounded-full"
+              />
+              <h5 className="pl-2">HTML/CSS</h5>
+            </div>
+            <div className="flex w-fit mr-2 mt-2 py-2 px-4 rounded-3xl bg-blue-50">
+              <Image
+                src="/profile_picture.jpeg"
+                alt="logo js"
+                width={25}
+                height={25}
+                className="rounded-full"
+              />
+              <h5 className="pl-2">Ruby</h5>
+            </div>
+            <div className="flex w-fit mr-2 mt-2 py-2 px-4 rounded-3xl bg-blue-50">
+              <Image
+                src="/profile_picture.jpeg"
+                alt="logo js"
+                width={25}
+                height={25}
+                className="rounded-full"
+              />
+              <h5 className="pl-2">TypeScript</h5>
+            </div>
           </div>
         </div>
       </div>
