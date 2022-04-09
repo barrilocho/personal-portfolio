@@ -7,7 +7,7 @@ describe('Test DescriptionField component', () => {
     const component = render(
       <DescriptionField
         text="Test Field Component"
-        icon={() => <FaCode className="mr-2" />}
+        icon={<FaCode className="mr-2" />}
       />
     );
     const element = component.getByText('Test Field Component');
@@ -17,7 +17,7 @@ describe('Test DescriptionField component', () => {
     const component = render(
       <DescriptionField
         text="Test Field Component"
-        icon={() => <FaCode className="mr-2" />}
+        icon={<FaCode className="mr-2" />}
         link="https://www.google.com"
       />
     );
@@ -28,7 +28,7 @@ describe('Test DescriptionField component', () => {
     const component = render(
       <DescriptionField
         text="Test Field Component"
-        icon={() => <FaCode className="mr-2" />}
+        icon={<FaCode className="mr-2" />}
         link="https://www.google.com"
       />
     );
