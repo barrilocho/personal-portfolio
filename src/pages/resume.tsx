@@ -7,6 +7,7 @@ import {
   FaLinkedinIn,
   FaGithub,
 } from 'react-icons/fa';
+import { DescriptionField } from '../presentation/components/DescriptionField/DescriptionField';
 const ResumePage = () => {
   return (
     <>
@@ -38,19 +39,15 @@ const ResumePage = () => {
               Full-stack developer
             </h3>
           </div>
-          <div className="flex items-center mt-6 my-2">
-            <FaMapPin className="mr-2 text-gray-500 " />
-            <h4 className="font-medium text-gray-500">
-              Zapopan, Jalisco, México
-            </h4>
-          </div>{' '}
-          <div className="flex items-center my-2">
-            <FaStarOfLife className="mr-2 text-gray-500 " />
-            <h4 className=" font-medium text-gray-500">
-              7 años de experiencia
-            </h4>
-          </div>
-          <div className="flex items-center my-2">
+          <DescriptionField
+            text="Zapopan, Jalisco, Mexico"
+            icon={<FaMapPin />}
+          />
+          <DescriptionField
+            text="7 años de experiencia"
+            icon={<FaStarOfLife />}
+          />
+          <DescriptionField>
             <FaEnvelope className="mr-2 text-gray-500 " />
             <a
               href="mailto:barrilocho@gmail.com"
@@ -58,25 +55,15 @@ const ResumePage = () => {
             >
               Correo electronico
             </a>
-          </div>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            className="text-blue-500 flex items-center font-medium my-2"
-            href="https://linkedin.com/in/barrilocho"
-          >
-            <FaLinkedinIn className="mr-2 text-gray-500" />
-            https://linkedin.com/in/barrilocho
-          </a>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            className="text-blue-500 flex items-center font-medium my-2"
-            href="https://github.com/barrilocho"
-          >
-            <FaGithub className="mr-2 text-gray-500" />
-            https://github.com/barrilocho
-          </a>
+          </DescriptionField>
+          <DescriptionField
+            link="https://linkedin.com/in/barrilocho"
+            icon={<FaLinkedinIn />}
+          ></DescriptionField>
+          <DescriptionField
+            link="https://github.com/barrilocho"
+            icon={<FaGithub />}
+          ></DescriptionField>
           <div className="">
             <h3 className="font-medium my-2 py-2 border-b-2 border-gray-200 border-dashed">
               Experiencia
