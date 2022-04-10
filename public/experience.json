@@ -1,0 +1,42 @@
+[
+  { 
+    "companyName": "ADDIKA",
+    "companyId": "ADDIKA",
+    "companyLogo": "addika_logo.png",
+    "workTime":"May 2021 - Present",
+    "jobTitle":"Sr frontend developer",
+    "place":"Jalisco, Mexico"
+  }, 
+  { 
+    "companyName": "Aleate",
+    "companyId": "Aleate_3",
+    "companyLogo": "aleate_logo.jpg",
+    "workTime":"February 2019 - May 2021",
+    "jobTitle":"Teach lead",
+    "place":"Jalisco, Mexico"
+  }, 
+  { 
+    "companyName": "Aleate",
+    "companyId": "Aleate_2",
+    "companyLogo": "aleate_logo.jpg",
+    "workTime":"August 2017 - January 2019",
+    "jobTitle":"Product Owner",
+    "place":"Jalisco, Mexico"
+  }, 
+  { 
+    "companyName": "Aleate",
+    "companyId": "Aleate_1",
+    "companyLogo": "Aleate_logo.jpg",
+    "workTime":"July 2016 - December 2017",
+    "jobTitle":"Full stack web developer",
+    "place":"Jalisco, Mexico"
+  },
+  { 
+    "companyName": "Beluga solutions",
+    "companyId": "beluga_1",
+    "companyLogo": "beluga_logo.png",
+    "workTime":"December 2014 - August 2016",
+    "jobTitle":"Jr web developer",
+    "place":"Jalisco, Mexico"
+  }
+]

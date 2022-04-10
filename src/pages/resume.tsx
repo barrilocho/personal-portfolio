@@ -8,6 +8,9 @@ import {
   FaGithub,
 } from 'react-icons/fa';
 import { DescriptionField } from '../presentation/components/DescriptionField/DescriptionField';
+import experience from '../../public/experience.json';
+import JobExperience from '../presentation/components/JobExperience/JobExperience';
+
 const ResumePage = () => {
   return (
     <>
@@ -69,30 +72,15 @@ const ResumePage = () => {
               Experiencia
             </h3>
           </div>
-          {[1, 2, 3, 4, 5].map((item, index) => (
-            <div key={`experience-${index}`} className="flex my-2">
-              <div className="mr-4 pt-1">
-                <Image
-                  src="/profile_picture.jpeg"
-                  width={60}
-                  height={60}
-                  alt="Addika logo"
-                  className="rounded-full"
-                />
-              </div>
-              <div>
-                <h4 className="font-bold mt-0 text-gray-600">
-                  Sr frontend developer
-                </h4>
-                <h4 className="font-medium text-gray-500">ADDIKA</h4>
-                <h5 className="text-sm italic text-gray-500">
-                  May 2021 - present
-                </h5>
-                <h5 className="text-sm italic text-gray-500">
-                  Zapopan Jalisco, Mx
-                </h5>
-              </div>
-            </div>
+          {experience.map((item, index) => (
+            <JobExperience
+              key={item.companyId}
+              companyLogo={`/img/companies/${item.companyLogo}`}
+              companyName={item.companyName}
+              workTime={item.workTime}
+              jobTitle={item.jobTitle}
+              place={item.place}
+            />
           ))}
         </div>
         <div className="bg-white m-2 p-4 flex flex-col self-start justify-center shadow-md w-full rounded-md border-2 border-black border-solid">
