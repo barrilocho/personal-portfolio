@@ -1,0 +1,18 @@
+[
+  { 
+    "name": "JavaScript",
+    "languageLogo": "javascript.png"
+  }, 
+  { 
+    "name": "HTML/CSS",
+    "languageLogo": "html.png"
+  }, 
+  { 
+    "name": "TypeScript",
+    "languageLogo": "typescript.png"
+  },
+  { 
+    "name": "Ruby",
+    "languageLogo": "ruby.png"
+  }
+]

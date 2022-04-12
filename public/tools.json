@@ -1,0 +1,54 @@
+[
+  { 
+    "name": "React",
+    "languageLogo": "react.png"
+  }, 
+  { 
+    "name": "NextJS",
+    "languageLogo": "nextjs.svg"
+  }, 
+  { 
+    "name": "AngularJs",
+    "languageLogo": "AngularJs.png"
+  }, 
+  { 
+    "name": "Angular",
+    "languageLogo": "Angular.png"
+  },
+  { 
+    "name": "NodeJs",
+    "languageLogo": "nodejs.png"
+  },
+  { 
+    "name": "React Native",
+    "languageLogo": "react.png"
+  },
+  { 
+    "name": "Redux",
+    "languageLogo": "redux2.png"
+  },
+  { 
+    "name": "MongoDB",
+    "languageLogo": "mongodb.jpeg"
+  },
+  { 
+    "name": "PostgreSQL",
+    "languageLogo": "postgreSQL.jpeg"
+  },
+  { 
+    "name": "Docker",
+    "languageLogo": "docker.svg"
+  },
+  { 
+    "name": "GitLabCi",
+    "languageLogo": "gitlab.png"
+  },
+  { 
+    "name": "AWS EC2",
+    "languageLogo": "aws_ec2.png"
+  },
+  { 
+    "name": "AWS S3",
+    "languageLogo": "aws_s3.png"
+  }
+]
