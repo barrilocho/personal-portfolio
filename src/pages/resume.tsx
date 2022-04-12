@@ -7,19 +7,23 @@ import {
   FaLinkedinIn,
   FaGithub,
 } from 'react-icons/fa';
+import { AiFillGitlab } from 'react-icons/ai';
 import { DescriptionField } from '../presentation/components/DescriptionField/DescriptionField';
 import experience from '../../public/experience.json';
+import languages from '../../public/languages.json';
+import tools from '../../public/tools.json';
 import JobExperience from '../presentation/components/JobExperience/JobExperience';
+import Skill from '../presentation/components/Skill/Skill';
 
 const ResumePage = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center justify-center space-x-4 w-full">
+      <div className="flex flex-col md:flex-row items-center justify-center space-x-4 h-screen w-full">
         <div className="m-2 p-6 pt-16 bg-white flex flex-col justify-center  shadow-md w-full max-w-sm rounded-md">
           <div className="flex justify-center self-center rounded-full border-2 border-solid border-gray-300">
             <Image
               className="rounded-full "
-              src="/profile_picture.jpeg"
+              src="/img/profile_picture.jpeg"
               alt="profile_picture"
               height={128}
               width={128}
@@ -67,11 +71,15 @@ const ResumePage = () => {
             link="https://github.com/barrilocho"
             icon={<FaGithub />}
           ></DescriptionField>
-          <div className="">
-            <h3 className="font-medium my-2 py-2 border-b-2 border-gray-200 border-dashed">
-              Experiencia
-            </h3>
-          </div>
+          <DescriptionField
+            link="https://gitlab.com/barrilocho"
+            icon={<AiFillGitlab />}
+          ></DescriptionField>
+        </div>
+        <div className="flex flex-col m-2 p-6 bg-white justify-center shadow-md w-full max-w-sm rounded-md">
+          <h3 className="font-medium my-2 py-2 border-b-2 border-gray-200 border-dashed">
+            Experiencia
+          </h3>
           {experience.map((item, index) => (
             <JobExperience
               key={item.companyId}
@@ -83,50 +91,36 @@ const ResumePage = () => {
             />
           ))}
         </div>
-        <div className="bg-white m-2 p-4 flex flex-col self-start justify-center shadow-md w-full rounded-md border-2 border-black border-solid">
-          <h3 className="font-medium pb-2 mb-2 border-b-2 border-gray-200 border-dashed">
-            LENGUAGES
-          </h3>
-          <div className="flex flex-wrap">
-            <div className="flex w-fit mr-2 mt-2 py-2 px-4 rounded-3xl bg-blue-50">
-              <Image
-                src="/profile_picture.jpeg"
-                alt="logo js"
-                width={25}
-                height={25}
-                className="rounded-full"
-              />
-              <h5 className="pl-2">Javascript</h5>
+        <div className="flex-column w-full">
+          <div className="bg-white m-2 p-4 shadow-md w-auto rounded-md">
+            <h3 className="font-medium pb-2 mb-2 border-b-2 border-gray-200 border-dashed">
+              LENGUAGES
+            </h3>
+
+            <div className="flex flex-wrap">
+              {languages.map((item) => (
+                <Skill
+                  key={item.name}
+                  name={item.name}
+                  rounded
+                  src={`/img/languages/${item.languageLogo}`}
+                />
+              ))}
             </div>
-            <div className="flex w-fit mr-2 mt-2 py-2 px-4 rounded-3xl bg-blue-50">
-              <Image
-                src="/profile_picture.jpeg"
-                alt="logo js"
-                width={25}
-                height={25}
-                className="rounded-full"
-              />
-              <h5 className="pl-2">HTML/CSS</h5>
-            </div>
-            <div className="flex w-fit mr-2 mt-2 py-2 px-4 rounded-3xl bg-blue-50">
-              <Image
-                src="/profile_picture.jpeg"
-                alt="logo js"
-                width={25}
-                height={25}
-                className="rounded-full"
-              />
-              <h5 className="pl-2">Ruby</h5>
-            </div>
-            <div className="flex w-fit mr-2 mt-2 py-2 px-4 rounded-3xl bg-blue-50">
-              <Image
-                src="/profile_picture.jpeg"
-                alt="logo js"
-                width={25}
-                height={25}
-                className="rounded-full"
-              />
-              <h5 className="pl-2">TypeScript</h5>
+          </div>
+          <div className="bg-white m-2 p-4 shadow-md w-auto rounded-md">
+            <h3 className="font-medium pb-2 mb-2 border-b-2 border-gray-200 border-dashed">
+              TOOLS
+            </h3>
+            <div className="flex flex-wrap">
+              {tools.map((item) => (
+                <Skill
+                  key={item.name}
+                  rounded
+                  name={item.name}
+                  src={`/img/tools/${item.languageLogo}`}
+                />
+              ))}
             </div>
           </div>
         </div>
