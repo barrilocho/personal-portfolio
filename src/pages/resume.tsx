@@ -19,7 +19,7 @@ const ResumePage = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row items-center justify-center space-x-4 h-screen w-full">
-        <div className="m-2 p-6 pt-16 bg-white flex flex-col justify-center  shadow-md w-full max-w-sm rounded-md">
+        <div className="m-2 p-6 pt-16 bg-white flex flex-col justify-center  shadow-sm w-full max-w-sm rounded-md">
           <div className="flex justify-center self-center rounded-full border-2 border-solid border-gray-300">
             <Image
               className="rounded-full "
@@ -76,9 +76,9 @@ const ResumePage = () => {
             icon={<AiFillGitlab />}
           ></DescriptionField>
         </div>
-        <div className="flex flex-col m-2 p-6 bg-white justify-center shadow-md w-full max-w-sm rounded-md">
-          <h3 className="font-medium my-2 py-2 border-b-2 border-gray-200 border-dashed">
-            Experiencia
+        <div className="flex flex-col m-2 p-6 pt-4 bg-white justify-center shadow-sm w-full max-w-sm rounded-md">
+          <h3 className="font-medium my-2 pb-2 border-b-2 border-gray-200 border-dashed">
+            EXPERIENCE
           </h3>
           {experience.map((item, index) => (
             <JobExperience
@@ -92,7 +92,7 @@ const ResumePage = () => {
           ))}
         </div>
         <div className="flex-column w-full">
-          <div className="bg-white m-2 p-4 shadow-md w-auto rounded-md">
+          <div className="bg-white m-2 p-4 shadow-sm w-auto rounded-md">
             <h3 className="font-medium pb-2 mb-2 border-b-2 border-gray-200 border-dashed">
               LENGUAGES
             </h3>
@@ -108,7 +108,7 @@ const ResumePage = () => {
               ))}
             </div>
           </div>
-          <div className="bg-white m-2 p-4 shadow-md w-auto rounded-md">
+          <div className="bg-white m-2 p-4  w-auto rounded-md">
             <h3 className="font-medium pb-2 mb-2 border-b-2 border-gray-200 border-dashed">
               TOOLS
             </h3>
@@ -121,6 +121,22 @@ const ResumePage = () => {
                   src={`/img/tools/${item.languageLogo}`}
                 />
               ))}
+            </div>
+          </div>
+          <div className="bg-white m-2 p-4 shadow-sm w-auto rounded-md">
+            <h3 className="font-medium pb-2 mb-2 border-b-2 border-gray-200 border-dashed">
+              PROJECTS
+            </h3>
+
+            <div className="flex flex-wrap">
+              <div className="cursor-pointer group relative bg-black/70 overflow-hidden shadow-md h-80 w-52 rounded-md outline outline-white/50 outline-2 outline-offset-[-8px]">
+                <Image
+                  layout="fill"
+                  src="/img/profile_picture.jpeg"
+                  alt="project"
+                  className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 group-hover:scale-125"
+                />
+              </div>
             </div>
           </div>
         </div>
