@@ -19,7 +19,7 @@ import Card from '../presentation/components/Card/Card';
 const ResumePage = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center justify-center  w-full">
+      <div className="relative flex flex-col items-center sm:items-stretch sm:justify-around md:justify-center sm:flex-wrap  sm:flex-row">
         <Card>
           <div className="flex justify-center self-center rounded-full border-2 border-solid border-gray-300">
             <Image
