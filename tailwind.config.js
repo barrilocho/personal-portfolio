@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        ecosan: 'url(/img/portfolio/ecosan/bg_ecosan.png)',
+        ecosan: "url('/img/portfolio/ecosan/bg_ecosan.svg')",
+        arca: "url('/img/portfolio/arca/bg_arca.svg')",
       },
     },
   },
