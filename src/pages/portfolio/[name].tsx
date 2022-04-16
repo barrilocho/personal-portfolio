@@ -7,10 +7,39 @@ interface Props {
   };
 }
 
-const ProjectPage: NextPage<Props> = ({ name }) => {
+const ProjectPage: NextPage<Props> = ({ name = 'ecosan' }) => {
   return (
-    <div className="background-ecosan w-100 h-100">
-      <h1 className="text-3xl font-bold">Project {name} page</h1>
+    <div className={`bg-${name} bg-fixed bg-center bg-no-repeat`}>
+      <div className="p-5">
+        <h1 className="text-6xl font-bold text-center text-white">
+          Ecosan app
+        </h1>
+        <p className="pt-16 text-white text-xl w- text-justify">
+          Una aplicacion hecha con react native, para el director de operaciones
+          y los operadores de la empresa ecosan, la cual consiste en medir el
+          rendimiento de
+        </p>
+        <p className="pt-16 text-white text-xl w- text-justify">
+          Una aplicacion hecha con react native, para el director de operaciones
+          y los operadores de la empresa ecosan, la cual consiste en medir el
+          rendimiento de
+        </p>
+        <p className="pt-16 text-white text-xl w- text-justify">
+          Una aplicacion hecha con react native, para el director de operaciones
+          y los operadores de la empresa ecosan, la cual consiste en medir el
+          rendimiento de
+        </p>
+        <p className="pt-16 text-white text-xl w- text-justify">
+          Una aplicacion hecha con react native, para el director de operaciones
+          y los operadores de la empresa ecosan, la cual consiste en medir el
+          rendimiento de
+        </p>
+        <p className="pt-16 text-white text-xl w- text-justify">
+          Una aplicacion hecha con react native, para el director de operaciones
+          y los operadores de la empresa ecosan, la cual consiste en medir el
+          rendimiento de
+        </p>
+      </div>
     </div>
   );
 };
