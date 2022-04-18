@@ -5,8 +5,13 @@ describe('Card component tests', () => {
   const title = 'Card title test';
   const text = 'Card content test';
   const children = <p>{text}</p>;
+  const cssClass = 'bg-black';
   beforeEach(() => {
-    render(<Card title={title}>{children}</Card>);
+    render(
+      <Card cssClass={cssClass} title={title}>
+        {children}
+      </Card>
+    );
   });
   test('should render Card title', () => {
     const header = screen.getByText(title);
@@ -18,5 +23,9 @@ describe('Card component tests', () => {
     const content = screen.getByText(text);
     expect(content).toBeInTheDocument();
     expect(content.textContent).toBe(text);
+  });
+  test('should extend component classes', () => {
+    const title = screen.getByRole('banner');
+    expect(title.parentElement).toHaveClass(cssClass);
   });
 });
