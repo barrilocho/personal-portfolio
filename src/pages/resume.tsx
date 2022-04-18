@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import {
   FaCode,
@@ -18,6 +19,7 @@ import Skill from '../presentation/components/Skill/Skill';
 import Card from '../presentation/components/Card/Card';
 
 const ResumePage = () => {
+  const router = useRouter();
   return (
     <>
       <div className="relative flex flex-col items-center sm:items-stretch sm:justify-around md:justify-center sm:flex-wrap sm:flex-row lg:flex-row lg:justify-center">
@@ -49,10 +51,6 @@ const ResumePage = () => {
             </h3>
           </div>
           <DescriptionField
-            text="Zapopan, Jalisco, Mexico"
-            icon={<FaMapPin />}
-          />
-          <DescriptionField
             text="7 años de experiencia"
             icon={<FaStarOfLife />}
           />
@@ -77,7 +75,10 @@ const ResumePage = () => {
             link="https://gitlab.com/barrilocho"
             icon={<AiFillGitlab />}
           ></DescriptionField>
-          <Card cssClass="shadow-none lg:mx-0 p-0" title="EXPERIENCE">
+          <Card
+            cssClass="hidden lg:shadow-none lg:block lg:mx-0 lg:p-0 lg:mt-4"
+            title="EXPERIENCE"
+          >
             {experience.map((item, index) => (
               <JobExperience
                 key={item.companyId}
@@ -102,8 +103,8 @@ const ResumePage = () => {
             />
           ))}
         </Card>
-        <div className="flex flex-col justify-center items-center w-full md:mx-4 lg:w-2/3 lg:m-1">
-          <Card cssClass="sm:max-w-none sm:mt-2" title="LANGUAGES">
+        <div className="flex flex-col justify-center items-center w-full md:mx-4 lg:w-2/3 lg:m-1 lg:self-start lg:max-w-3xl">
+          <Card cssClass="sm:!max-w-none sm:mt-2 lg:mt-0" title="LANGUAGES">
             <div className="flex flex-wrap">
               {languages.map((item) => (
                 <Skill
@@ -115,7 +116,7 @@ const ResumePage = () => {
               ))}
             </div>
           </Card>
-          <Card cssClass="sm:max-w-none sm:mt-2" title="TOOLS">
+          <Card cssClass="sm:!max-w-none sm:mt-2" title="TOOLS">
             <div className="flex flex-wrap">
               {tools.map((item) => (
                 <Skill
@@ -127,12 +128,15 @@ const ResumePage = () => {
               ))}
             </div>
           </Card>
-          <Card cssClass="sm:max-w-none sm:mt-2" title="PROJECTS (WIP)">
+          <Card cssClass="sm:!max-w-none sm:mt-2" title="PROJECTS (WIP)">
             <div className="flex flex-wrap">
               {projects.map((item) => (
                 <section
                   key={item.name}
-                  className="group w-full rounded-md shadow-md"
+                  className="group w-full md:max-w-xs rounded-md shadow-md"
+                  onClick={() => {
+                    router.push(`/portfolio/${item.companyName}`);
+                  }}
                 >
                   <div className="m-0 rounded-t-md cursor-pointer  relative bg-black/70 overflow-hidden shadow-md h-60 w-full outline outline-white/50 outline-2 outline-offset-[-8px]">
                     <Image
