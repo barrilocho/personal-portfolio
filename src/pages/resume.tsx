@@ -12,6 +12,7 @@ import { DescriptionField } from '../presentation/components/DescriptionField/De
 import experience from '../../public/experience.json';
 import languages from '../../public/languages.json';
 import tools from '../../public/tools.json';
+import projects from '../../public/portfolio.json';
 import JobExperience from '../presentation/components/JobExperience/JobExperience';
 import Skill from '../presentation/components/Skill/Skill';
 import Card from '../presentation/components/Card/Card';
@@ -19,8 +20,8 @@ import Card from '../presentation/components/Card/Card';
 const ResumePage = () => {
   return (
     <>
-      <div className="relative flex flex-col items-center sm:items-stretch sm:justify-around md:justify-center sm:flex-wrap  sm:flex-row">
-        <Card>
+      <div className="relative flex flex-col items-center sm:items-stretch sm:justify-around md:justify-center sm:flex-wrap sm:flex-row lg:flex-row lg:justify-center">
+        <Card cssClass="lg:w-1/3 lg:m-1">
           <div className="flex justify-center self-center rounded-full border-2 border-solid border-gray-300">
             <Image
               className="rounded-full "
@@ -76,8 +77,20 @@ const ResumePage = () => {
             link="https://gitlab.com/barrilocho"
             icon={<AiFillGitlab />}
           ></DescriptionField>
+          <Card cssClass="shadow-none lg:mx-0 p-0" title="EXPERIENCE">
+            {experience.map((item, index) => (
+              <JobExperience
+                key={item.companyId}
+                companyLogo={`/img/companies/${item.companyLogo}`}
+                companyName={item.companyName}
+                workTime={item.workTime}
+                jobTitle={item.jobTitle}
+                place={item.place}
+              />
+            ))}
+          </Card>
         </Card>
-        <Card title="EXPERIENCE">
+        <Card cssClass="lg:hidden" title="EXPERIENCE">
           {experience.map((item, index) => (
             <JobExperience
               key={item.companyId}
@@ -89,8 +102,8 @@ const ResumePage = () => {
             />
           ))}
         </Card>
-        <div className="flex-column w-full">
-          <Card title="LANGUAGES">
+        <div className="flex flex-col justify-center items-center w-full md:mx-4 lg:w-2/3 lg:m-1">
+          <Card cssClass="sm:max-w-none sm:mt-2" title="LANGUAGES">
             <div className="flex flex-wrap">
               {languages.map((item) => (
                 <Skill
@@ -102,7 +115,7 @@ const ResumePage = () => {
               ))}
             </div>
           </Card>
-          <Card title="TOOLS">
+          <Card cssClass="sm:max-w-none sm:mt-2" title="TOOLS">
             <div className="flex flex-wrap">
               {tools.map((item) => (
                 <Skill
@@ -114,23 +127,46 @@ const ResumePage = () => {
               ))}
             </div>
           </Card>
-          <Card title="PROJECTS">
+          <Card cssClass="sm:max-w-none sm:mt-2" title="PROJECTS (WIP)">
             <div className="flex flex-wrap">
-              {tools.map((item) => (
-                <div
+              {projects.map((item) => (
+                <section
                   key={item.name}
-                  className="m-0 cursor-pointer group relative bg-black/70 overflow-hidden shadow-md h-40 w-40 outline outline-white/50 outline-2 outline-offset-[-8px]"
+                  className="group w-full rounded-md shadow-md"
                 >
-                  <Image
-                    layout="fill"
-                    src="/img/profile_picture.jpeg"
-                    alt="project"
-                    className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 group-hover:scale-125"
-                  />
-                  <h2 className="absolute bottom-8 left-4 text-lg text-white">
-                    hola
-                  </h2>
-                </div>
+                  <div className="m-0 rounded-t-md cursor-pointer  relative bg-black/70 overflow-hidden shadow-md h-60 w-full outline outline-white/50 outline-2 outline-offset-[-8px]">
+                    <Image
+                      layout="fill"
+                      src={`/img/portfolio/${item.companyName}/${item.companyName}_mini.png`}
+                      alt="project"
+                      className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 group-hover:scale-125"
+                    />
+                    <h2 className="absolute bottom-3 font-semibold left-4 text-2xl text-white">
+                      {item.shortTitle_en}
+                    </h2>
+                  </div>
+                  <div className="p-4">
+                    {/* <h3 className="my-2 text-2xl font-semibold text-blue-800">
+                      {item.shortTitle_en}
+                    </h3> */}
+                    <p className="text-gray-900">{item.description_en}</p>
+                    <div className="flex flex-wrap">
+                      <ul className="flex">
+                        {item.tools.map((technology, index) => (
+                          <li
+                            key={technology}
+                            className="mt-4 text-sm font-bold text-gray-400"
+                          >
+                            {technology}
+                            {index !== item.tools.length - 1 && (
+                              <>&nbsp;{'•'}&nbsp;</>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </section>
               ))}
             </div>
           </Card>
