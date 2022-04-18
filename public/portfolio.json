@@ -1,0 +1,15 @@
+[
+  { 
+    "name": "Ecosan",
+    "url": "",
+    "icon": "ecosan.png",
+    "companyName": "ecosan",
+    "images": ["addika_logo.png"],
+    "mini": "ecosan_mini.png",
+    "shortTitle_es": "Escosan sistema ERP ",
+    "shortTitle_en": "Escosan ERP system",
+    "description_es":"Permite conocer en tiempo real el status de la empresa, para llevar un mejor control interno y control de inventario. Ayuda a analizar y contrastar informacion para mejorar el desempeño de la operación",
+    "description_en":"Ecosan is a system that allows you to know the status of the company, in real time, help you to control your internal operations and inventory control. Also helps you to analyze and contrast information to improve the performance of the operation",
+    "tools": ["React Native", "TS", "Jest"]
+  }
+]
