@@ -51,7 +51,7 @@ const ResumePage = () => {
             </h3>
           </div>
           <DescriptionField
-            text="7 años de experiencia"
+            text="7 years of experience"
             icon={<FaStarOfLife />}
           />
           <DescriptionField>
@@ -60,7 +60,7 @@ const ResumePage = () => {
               href="mailto:barrilocho@gmail.com"
               className="font-medium text-gray-500"
             >
-              Correo electronico
+              Email
             </a>
           </DescriptionField>
           <DescriptionField
