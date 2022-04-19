@@ -47,7 +47,7 @@ const ResumePage = () => {
           <div className="flex items-center self-center mt-3">
             <FaCode className="mr-2" />
             <h3 className=" text-sm font-medium text-gray-900">
-              Full-stack developer
+              Full-stack web developer
             </h3>
           </div>
           <DescriptionField
