@@ -16,8 +16,8 @@ Workdir /app
 
 ENV NODE_ENV production
 
-RUN addgroup -g 1001 -s nodejs
-RUN adduser -s alexdev -u 1001
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S alexdev -u 1001
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
