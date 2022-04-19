@@ -9,11 +9,11 @@
   }, 
   { 
     "name": "AngularJs",
-    "languageLogo": "AngularJs.png"
+    "languageLogo": "angularjs.png"
   }, 
   { 
     "name": "Angular",
-    "languageLogo": "Angular.png"
+    "languageLogo": "angular.png"
   },
   { 
     "name": "NodeJs",
@@ -33,7 +33,7 @@
   },
   { 
     "name": "PostgreSQL",
-    "languageLogo": "postgreSQL.jpeg"
+    "languageLogo": "postgresql.jpeg"
   },
   { 
     "name": "Docker",
