@@ -133,15 +133,15 @@ const ResumePage = () => {
               {projects.map((item) => (
                 <section
                   key={item.name}
-                  className="group w-full md:max-w-xs rounded-md shadow-md"
+                  className="group w-full md:max-w-xs rounded-md shadow-md mt-4 sm:mr-4"
                   onClick={() => {
                     router.push(`/portfolio/${item.companyName}`);
                   }}
                 >
-                  <div className="m-0 rounded-t-md cursor-pointer  relative bg-black/70 overflow-hidden shadow-md h-60 w-full outline outline-white/50 outline-2 outline-offset-[-8px]">
+                  <div className="m-0 rounded-t-md cursor-pointer  relative bg-black/70 overflow-hidden shadow-md h-48 w-full outline outline-white/50 outline-2 outline-offset-[-8px]">
                     <Image
                       layout="fill"
-                      src={`/img/portfolio/${item.companyName}/${item.companyName}_mini.png`}
+                      src={`/img/portfolio/${item.companyName}/${item.mini}`}
                       alt="project"
                       className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 group-hover:scale-125"
                     />
@@ -149,26 +149,24 @@ const ResumePage = () => {
                       {item.shortTitle_en}
                     </h2>
                   </div>
-                  <div className="p-4">
+                  <div className="p-4 h-52 flex flex-col justify-between">
                     {/* <h3 className="my-2 text-2xl font-semibold text-blue-800">
                       {item.shortTitle_en}
                     </h3> */}
                     <p className="text-gray-900">{item.description_en}</p>
-                    <div className="flex flex-wrap">
-                      <ul className="flex">
-                        {item.tools.map((technology, index) => (
-                          <li
-                            key={technology}
-                            className="mt-4 text-sm font-bold text-gray-400"
-                          >
-                            {technology}
-                            {index !== item.tools.length - 1 && (
-                              <>&nbsp;{'•'}&nbsp;</>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <ul className="flex flex-wrap items-end">
+                      {item.tools.map((technology, index) => (
+                        <li
+                          key={technology}
+                          className="text-sm font-bold text-gray-400"
+                        >
+                          {technology}
+                          {index !== item.tools.length - 1 && (
+                            <>&nbsp;{'•'}&nbsp;</>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </section>
               ))}
