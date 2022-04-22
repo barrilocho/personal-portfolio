@@ -29,10 +29,18 @@ const JobExperience: FC<Props> = ({
           />
         </div>
         <div>
-          <h4 className="font-bold mt-0 text-gray-600">{jobTitle}</h4>
-          <h4 className="font-medium text-gray-500">{companyName}</h4>
-          <h5 className="text-sm italic text-gray-500">{workTime}</h5>
-          <h5 className="text-sm italic text-gray-500">{place}</h5>
+          <h4 className="font-bold mt-0 text-gray-600 dark:text-gray-200 ">
+            {jobTitle}
+          </h4>
+          <h4 className="font-medium text-gray-500 dark:text-gray-200">
+            {companyName}
+          </h4>
+          <h5 className="text-sm italic text-gray-500 dark:text-gray-300">
+            {workTime}
+          </h5>
+          <h5 className="text-sm italic text-gray-500 dark:text-gray-300 ">
+            {place}
+          </h5>
         </div>
       </div>
     </>
