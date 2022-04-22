@@ -140,12 +140,12 @@ const ResumePage = () => {
               {projects.map((item) => (
                 <section
                   key={item.name}
-                  className="group w-full md:max-w-xs rounded-md shadow-md mt-4 sm:mr-4"
+                  className="group w-full md:max-w-xs rounded-md shadow-md mt-4 sm:mr-4 dark:bg-slate-700"
                   onClick={() => {
                     router.push(`/portfolio/${item.companyName}`);
                   }}
                 >
-                  <div className="m-0 rounded-t-md cursor-pointer  relative bg-black/70 overflow-hidden shadow-md h-48 w-full outline outline-white/50 outline-2 outline-offset-[-8px]">
+                  <div className="m-0 rounded-t-md cursor-pointer  relative bg-black/70 dark:bg-slate-500 overflow-hidden shadow-md h-48 w-full outline outline-white/50 outline-2 outline-offset-[-8px]">
                     <Image
                       layout="fill"
                       src={`/img/portfolio/${item.companyName}/${item.mini}`}
@@ -160,12 +160,12 @@ const ResumePage = () => {
                     {/* <h3 className="my-2 text-2xl font-semibold text-blue-800">
                       {item.shortTitle_en}
                     </h3> */}
-                    <p className="text-gray-900">{item.description_en}</p>
+                    <p className="text-gray-900 dark:text-slate-200">{item.description_en}</p>
                     <ul className="flex flex-wrap items-end">
                       {item.tools.map((technology, index) => (
                         <li
                           key={technology}
-                          className="text-sm font-bold text-gray-400"
+                          className="text-sm font-bold text-gray-400 dark:text-slate-400"
                         >
                           {technology}
                           {index !== item.tools.length - 1 && (
