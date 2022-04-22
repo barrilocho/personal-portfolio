@@ -17,12 +17,19 @@ import projects from '../../public/portfolio.json';
 import JobExperience from '../presentation/components/JobExperience/JobExperience';
 import Skill from '../presentation/components/Skill/Skill';
 import Card from '../presentation/components/Card/Card';
+import { useTheme } from 'next-themes';
+import { useEffect } from 'react';
 
 const ResumePage = () => {
+  const { systemTheme, theme, setTheme } = useTheme();
+  useEffect(() => {
+    setTheme('dark');
+  }, []);
+
   const router = useRouter();
   return (
     <>
-      <div className="relative flex flex-col items-center sm:items-stretch sm:justify-around md:justify-center sm:flex-wrap sm:flex-row lg:flex-row lg:justify-center">
+      <div className=" relative flex flex-col items-center sm:items-stretch sm:justify-around md:justify-center sm:flex-wrap sm:flex-row lg:flex-row lg:justify-center dark:bg-slate-900">
         <Card cssClass="lg:w-1/3 lg:m-1">
           <div className="flex justify-center self-center rounded-full border-2 border-solid border-gray-300">
             <Image
@@ -33,7 +40,7 @@ const ResumePage = () => {
               width={128}
             />
           </div>
-          <h1 className="self-center mt-3 lf-center text-2xl font-medium text-black">
+          <h1 className="self-center mt-3 lf-center text-2xl font-medium text-black dark:text-white ">
             Alejandro barrios
           </h1>
           <a
@@ -46,7 +53,7 @@ const ResumePage = () => {
           </a>
           <div className="flex items-center self-center mt-3">
             <FaCode className="mr-2" />
-            <h3 className=" text-sm font-medium text-gray-900">
+            <h3 className=" text-sm font-medium text-gray-900 dark:text-gray-100 ">
               Full-stack web developer
             </h3>
           </div>
@@ -55,10 +62,10 @@ const ResumePage = () => {
             icon={<FaStarOfLife />}
           />
           <DescriptionField>
-            <FaEnvelope className="mr-2 text-gray-500 " />
+            <FaEnvelope className="mr-2 text-gray-500 dark:text-gray-100 " />
             <a
               href="mailto:barrilocho@gmail.com"
-              className="font-medium text-gray-500"
+              className="font-medium text-gray-500 dark:text-gray-100"
             >
               Email
             </a>
