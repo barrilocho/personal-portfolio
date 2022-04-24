@@ -23,14 +23,14 @@ import { useEffect } from 'react';
 const ResumePage = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   useEffect(() => {
-    setTheme('dark');
-  }, []);
+    setTheme(systemTheme);
+  }, [systemTheme, setTheme]);
 
   const router = useRouter();
   return (
     <>
-      <div className=" relative flex flex-col items-center sm:items-stretch sm:justify-around md:justify-center sm:flex-wrap sm:flex-row lg:flex-row lg:justify-center dark:bg-slate-900">
-        <Card cssClass="lg:w-1/3 lg:m-1">
+      <div className="relative flex flex-col items-center sm:items-stretch sm:justify-around md:justify-center sm:flex-wrap sm:flex-row lg:flex-row lg:justify-center dark:bg-slate-900">
+        <Card cssClass="lg:w-1/3 lg:m-1 sm:animate-fadeInUp">
           <div className="flex justify-center self-center rounded-full border-2 border-solid border-gray-300">
             <Image
               className="rounded-full "
@@ -98,7 +98,7 @@ const ResumePage = () => {
             ))}
           </Card>
         </Card>
-        <Card cssClass="lg:hidden" title="EXPERIENCE">
+        <Card cssClass="lg:hidden sm:animate-fadeInUp" title="EXPERIENCE">
           {experience.map((item, index) => (
             <JobExperience
               key={item.companyId}
@@ -110,8 +110,11 @@ const ResumePage = () => {
             />
           ))}
         </Card>
-        <div className="flex flex-col justify-center items-center w-full md:mx-4 lg:w-2/3 lg:m-1 lg:self-start lg:max-w-3xl">
-          <Card cssClass="sm:!max-w-none sm:mt-2 lg:mt-0" title="LANGUAGES">
+        <div className="flex flex-col justify-center items-center w-full md:mx-4 lg:w-2/3 lg:m-1 lg:self-start lg:max-w-3xl sm:animate-fadeInDown">
+          <Card
+            cssClass="sm:!max-w-none sm:mt-2 lg:mt-0 lg:animate-fadeInDown"
+            title="LANGUAGES"
+          >
             <div className="flex flex-wrap">
               {languages.map((item) => (
                 <Skill
@@ -123,7 +126,10 @@ const ResumePage = () => {
               ))}
             </div>
           </Card>
-          <Card cssClass="sm:!max-w-none sm:mt-2" title="TOOLS">
+          <Card
+            cssClass="sm:!max-w-none sm:mt-2 lg:animate-fadeInDown"
+            title="TOOLS"
+          >
             <div className="flex flex-wrap">
               {tools.map((item) => (
                 <Skill
@@ -135,12 +141,15 @@ const ResumePage = () => {
               ))}
             </div>
           </Card>
-          <Card cssClass="sm:!max-w-none sm:mt-2" title="PROJECTS (WIP)">
-            <div className="flex flex-wrap">
+          <Card
+            cssClass="sm:!max-w-none sm:mt-2  lg:animate-fadeInDown"
+            title="PROJECTS (WIP)"
+          >
+            <div className="flex w-full overflow-auto">
               {projects.map((item) => (
                 <section
                   key={item.name}
-                  className="group w-full md:max-w-xs rounded-md shadow-md mt-4 sm:mr-4 dark:bg-slate-700"
+                  className="group w-full min-w-[320px]  md:max-w-xs rounded-md shadow-md my-4 sm:mr-4 dark:bg-slate-700"
                   onClick={() => {
                     router.push(`/portfolio/${item.companyName}`);
                   }}
@@ -160,7 +169,9 @@ const ResumePage = () => {
                     {/* <h3 className="my-2 text-2xl font-semibold text-blue-800">
                       {item.shortTitle_en}
                     </h3> */}
-                    <p className="text-gray-900 dark:text-slate-200">{item.description_en}</p>
+                    <p className="text-gray-900 dark:text-slate-200">
+                      {item.description_en}
+                    </p>
                     <ul className="flex flex-wrap items-end">
                       {item.tools.map((technology, index) => (
                         <li
