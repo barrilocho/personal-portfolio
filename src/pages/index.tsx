@@ -19,6 +19,7 @@ import Skill from '../presentation/components/Skill/Skill';
 import Card from '../presentation/components/Card/Card';
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';
+import ProjectCard from '../presentation/components/ProjectCard/ProjectCard';
 
 const ResumePage = () => {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -147,46 +148,15 @@ const ResumePage = () => {
           >
             <div className="flex w-full overflow-auto">
               {projects.map((item) => (
-                <section
+                <ProjectCard
                   key={item.name}
-                  className="group w-full min-w-[320px]  md:max-w-xs rounded-md shadow-md my-4 sm:mr-4 dark:bg-slate-700"
-                  onClick={() => {
-                    router.push(`/portfolio/${item.companyName}`);
-                  }}
-                >
-                  <div className="m-0 rounded-t-md cursor-pointer  relative bg-black/70 dark:bg-slate-500 overflow-hidden shadow-md h-48 w-full outline outline-white/50 outline-2 outline-offset-[-8px]">
-                    <Image
-                      layout="fill"
-                      src={`/img/portfolio/${item.companyName}/${item.mini}`}
-                      alt="project"
-                      className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 group-hover:scale-125"
-                    />
-                    <h2 className="absolute bottom-3 font-semibold left-4 text-2xl text-white">
-                      {item.shortTitle_en}
-                    </h2>
-                  </div>
-                  <div className="p-4 h-52 flex flex-col justify-between">
-                    {/* <h3 className="my-2 text-2xl font-semibold text-blue-800">
-                      {item.shortTitle_en}
-                    </h3> */}
-                    <p className="text-gray-900 dark:text-slate-200">
-                      {item.description_en}
-                    </p>
-                    <ul className="flex flex-wrap items-end">
-                      {item.tools.map((technology, index) => (
-                        <li
-                          key={technology}
-                          className="text-sm font-bold text-gray-400 dark:text-slate-400"
-                        >
-                          {technology}
-                          {index !== item.tools.length - 1 && (
-                            <>&nbsp;{'•'}&nbsp;</>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </section>
+                  name={item.name}
+                  imageUrl={item.mini}
+                  description={item.description_en}
+                  shortTitle={item.shortTitle_en}
+                  tools={item.tools}
+                  onClick={() => {}}
+                />
               ))}
             </div>
           </Card>
